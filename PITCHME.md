@@ -103,7 +103,7 @@ Note:
 - But marketing rejects it |
 - They want highlight articles with an image |
 - And better layout |
-- Articles support a `Dimensions` method |
+- Articles support a 'Dimensions' method |
 
 ---?code=go/news2/news2.go&lang=Go&title=Assemble With Dimensions
 
@@ -131,7 +131,7 @@ Note:
 @[5-37](AssembleNews is unchanged)
 @[39-56](AddImages is doing the trick)
 
----?code=go/news2/news2.go&lang=Go&title=Contract With AddImages
+---?code=go/news3/news3.go&lang=Go&title=Contract With AddImages
 
 @[58-59](the start is the same)
 @[60-61](nice comment for maintainability)
@@ -143,7 +143,7 @@ Note:
 ## What Might Work Better
 
 - Interfaces |
-- Things like __Min__() for operators |
+- Things like \_\_Min\_\_() for operators |
 - Automated code generation |
 - A solution open only to library writers |
 - No change at all |
