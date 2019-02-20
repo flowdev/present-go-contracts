@@ -79,10 +79,10 @@ Note:
 
 ---?code=go/news1/news1.go&lang=Go&title=Consequently The Contract Looks Like This
 
-@[17](the expected contract signature)
-@[18](convert the simple type into a slice)
-@[26](replace return statements with '_ = ')
-@[17-27](all together)
+@[16](the expected contract signature)
+@[17](convert the simple type into a slice)
+@[25](replace return statements with '_ = ')
+@[16-26](all together)
 
 ---
 
@@ -109,14 +109,15 @@ Note:
 
 @[7-13](search first highlight article)
 @[14-17](if found, render highlight article)
-@[19-21](don't forget highlight article)
-@[22-31](render articles in rows)
+@[19-21](don't forget separator after highlight article)
+@[22-34](render articles in rows)
+@[5-37](all together)
 
 ---?code=go/news2/news2.go&lang=Go&title=Contract With Dimensions
 
-@[36-37](the start is the same)
-@[64-65](the end too)
-@[38-63](the rest is just copied over)
+@[39-40](the start is the same)
+@[71-72](the end too)
+@[41-70](the rest is just copied over)
 
 ---
 
@@ -127,16 +128,39 @@ Note:
 
 ---?code=go/news3/news3.go&lang=Go&title=AddImages
 
-@[7-13](search first highlight article)
-@[14-17](if found, render highlight article)
-@[19-21](don't forget highlight article)
-@[22-31](render articles in rows)
+@[5-37](AssembleNews is unchanged)
+@[39-56](AddImages is doing the trick)
 
 ---?code=go/news2/news2.go&lang=Go&title=Contract With AddImages
 
-@[36-37](the start is the same)
-@[64-65](the end too)
-@[38-63](the rest is just copied over)
+@[58-59](the start is the same)
+@[60-61](nice comment for maintainability)
+@[94-110](contract part for AddImages)
+@[58-111](all together)
+
+---
+
+## What Might Work Better
+
+- Interfaces |
+- Things like __Min__() for operators |
+- Automated code generation |
+- A solution open only to library writers |
+- No change at all |
+
+---
+
+## Suggestion For Syntax
+
+```go
+func Stringify(type T stringer)(s []T) (ret []string) {
+	//...
+}
+
+func Stringify(s []T:stringer) (ret []string) {
+	//...
+}
+```
 
 ---
 

@@ -99,7 +99,7 @@ func (sa ShortArticle) Dimensions() (width, height int) {
 type LongArticle struct {
 	title    string
 	abstract string
-	text     string
+	htmlText string
 }
 
 func (la LongArticle) Render(floatLeft bool) []byte {
@@ -114,7 +114,7 @@ func (la LongArticle) Render(floatLeft bool) []byte {
 	ret.WriteString(la.abstract)
 	ret.WriteString("</em></p>")
 	ret.WriteString("<p>")
-	ret.WriteString(la.text)
+	ret.WriteString(la.htmlText)
 	ret.WriteString("</p>")
 	ret.WriteString("</div>")
 	return ret.Bytes()
@@ -122,5 +122,5 @@ func (la LongArticle) Render(floatLeft bool) []byte {
 
 func (la LongArticle) Dimensions() (width, height int) {
 	// do some fancy calculation with the content:
-	return 512, (len(la.text)/50 + len(la.abstract)/40 + 3) * 20
+	return 512, (len(la.htmlText)/50 + len(la.abstract)/40 + 3) * 20
 }
